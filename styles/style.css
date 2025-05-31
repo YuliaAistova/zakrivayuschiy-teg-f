@@ -81,7 +81,7 @@
   text-shadow: 1px 0px var(--stroke-color), -1px 0px var(--stroke-color), 0px 1px var(--stroke-color), 0px -1px var(--stroke-color);
 }
 
-@supports ((text-stroke: 1px var(--stroke-color)) or (-webkit-text-stroke: 1px var(--stroke-color);)) {
+@supports ((text-stroke: 1px var(--stroke-color)) or (-webkit-text-stroke: 1px var(--stroke-color))) {
   .card__lable {
     -webkit-text-stroke: 1px var(--stroke-color);
     text-stroke: 1px var(--stroke-color);
@@ -174,6 +174,9 @@
 .button__text {
   font-family: var(--accent-font), fantasy;
   font-size: var(--main-fsize);
+  position: relative;
+  mix-blend-mode: difference;
+  color: #fff;
 }
 
 .sparks {
@@ -252,12 +255,6 @@
 
 .button:hover::before {
   transform: translate(0%);
-}
-
-.button__text {
-  position: relative;
-  mix-blend-mode: difference;
-  color: #fff;
 }
 
 .button:focus-visible {
