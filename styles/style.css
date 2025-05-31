@@ -13,4 +13,311 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--main-font), sans-serif;
+  font-variation-settings: 'wght' var(--main-text-wght);
+  background-image: var(--background);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.header {
+  font-family: var(--accent-font), fantasy;
+  text-transform: uppercase;
+  border: 2px solid var(--accent-color);
+  padding-block: var(--header-padding-block);
+  margin-block: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg-color);
+  margin-inline: auto;
+}
+
+.fluid-width {
+  inline-size: var(--inline-size);
+  margin-inline: auto;
+}
+
+.header__title {
+  margin-block-end: 20px;
+  font-size: var(--header-title-fsize);
+}
+
+.header__subtitle {
+  font-size: var(--header-subtitle-fsize);
+}
+
+.card {
+  margin-block-end: 49px;
+}
+
+.card:last-of-type {
+  margin-block-end: 52px;
+}
+
+.card__title {
+  font-variation-settings: 'wght' var(--title-text-wght);
+  border: 2px solid #000;
+  font-size: 18px;
+  padding-inline: 10px;
+  padding-block: 5px;
+  background-color: var(--bg-color);
+  line-height: 122%;
+}
+
+.card__image-lable {
+  position: relative;
+}
+
+.card__lable {
+  position: absolute;
+  inset-inline-end: 13px;
+  inset-block-start: 25px;
+  font-family: var(--accent-font), fantasy;
+  font-size: var(--main-fsize);
+  line-height: 1;
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+  text-shadow: 1px 0px var(--stroke-color), -1px 0px var(--stroke-color), 0px 1px var(--stroke-color), 0px -1px var(--stroke-color);
+}
+
+@supports ((text-stroke: 1px var(--stroke-color)) or (-webkit-text-stroke: 1px var(--stroke-color);)) {
+  .card__lable {
+    -webkit-text-stroke: 1px var(--stroke-color);
+    text-stroke: 1px var(--stroke-color);
+    text-shadow: none;
+  }
+}
+
+.card__img {
+  display: block;
+  inline-size: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: right;
+  border: 2px solid var(--accent-color);
+}
+
+.filter-bright {
+  filter: brightness(200%);
+}
+
+.filter-contrast {
+  filter: contrast(175%);
+}
+
+.filter-blur {
+  filter: blur(0.2rem);
+}
+
+.filter-grayscale {
+  filter: grayscale(80%);
+}
+
+.filter-saturate {
+  filter: saturate(240%);
+}
+
+.filter-rotate {
+  filter: hue-rotate(0.7turn);
+}
+
+.filter-multi {
+  filter: brightness(150%) hue-rotate(0.3turn);
+}
+
+.card__content {
+  font-size: var(--content-fsize);
+  padding-inline-start: 25px;
+  padding-inline-end: 26px;
+  padding-block-start: 25px;
+  padding-block-end: 25px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--accent-color);
+  background-color: var(--bg-color);
+  line-height: 116%;
+}
+
+.card__content p {
+  margin-bottom: 28px;
+}
+
+.card__content p:last-of-type {
+  margin-bottom: 25px;
+}
+
+.card__like-container {
+  display: flex;
+  align-self: end;
+  align-items: center;
+  gap: 1px;
+}
+
+.card__icon-button {
+  background-color: transparent;
+  border: 2px solid transparent;
+  cursor: pointer;
+  block-size: 39px;
+  flex-shrink: 0;
+}
+
+.card__like-button {
+  background-color: transparent;
+  border: 2px solid var(--accent-color);
+  inline-size: 129px;
+  block-size: 39px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.button__text {
+  font-family: var(--accent-font), fantasy;
+  font-size: var(--main-fsize);
+}
+
+.sparks {
+  opacity: 0;
+}
+
+.button-save {
+  margin-block-end: 102px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  padding: 15px 20px;
+  border: 2px solid var(--accent-color);
+}
+
+.floppy {
+  inline-size: 28px;
+  block-size: 28px;
+  mix-blend-mode: difference;
+  color: #fff;
+}
+
+.dialog {
+  inline-size: var(--dialog-width);
+  block-size: 191px;
+  padding: 23px 38px;
+  text-transform: uppercase;
+}
+
+.dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.75);
+}
+
+.modal {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-block-end: 30px;
+  line-height: 150%;
+}
+
+.dialog__floppy {
+  inline-size: 39px;
+  block-size: 39px;
+  flex-shrink: 0;
+}
+
+.close {
+  font-family: var(--accent-font), fantasy;
+  font-size: var(--main-fsize);
+  line-height: 150%;
+  inline-size: 257px;
+  block-size: 38px;
+  background-color: transparent;
+  border: 2px solid var(--accent-color);
+  text-transform: uppercase;
+
+}
+
+.button {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-color);
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: black;
+  transition: transform 0.5s ease-in-out;
+  transform: translate(-100%);
+}
+
+.button:hover::before {
+  transform: translate(0%);
+}
+
+.button__text {
+  position: relative;
+  mix-blend-mode: difference;
+  color: #fff;
+}
+
+.button:focus-visible {
+  outline: none;
+  box-shadow: 2px 2px 0px var(--accent-color);
+  transition: 0.3s ease;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  outline: none;
+  border-color: var(--accent-color);
+  transition: 0.3s ease;
+}
+
+.core {
+  fill: transparent;
+  transition: 0.3s linear 0.03s;
+}
+
+.card__icon-button:hover .core {
+  fill: var(--contour-color);
+  transition: 0.3s linear;
+}
+
+.main-body {
+  fill: transparent;
+  transition: 0.3s linear;
+}
+
+.card__icon-button:hover .main-body {
+  fill: var(--contour-color);
+  transition: 0.3s linear 0.05s;
+}
+
+
+.card__icon-button:active .core {
+  fill: var(--animation-fill-color);
+  transition: 0.3s linear;
+}
+
+.card__icon-button:active .main-body {
+  fill: var(--animation-fill-color);
+  transition: 0.3s linear 0.05s;
+}
+
+@media (width >= 376px) {
+  .card__lable {
+    inset-inline-end: 25px;
+  }
+
+  .button-save {
+    flex-direction: row;
+  }
+
+  .floppy {
+  inline-size: 21px;
+  block-size: 21px;
+  }
 }
