@@ -160,6 +160,7 @@
   cursor: pointer;
   block-size: 39px;
   flex-shrink: 0;
+  transition: 0.3s ease;
 }
 
 .card__like-button {
@@ -203,7 +204,6 @@
 
 .dialog {
   inline-size: var(--dialog-width);
-  block-size: 191px;
   padding: 23px 38px;
   text-transform: uppercase;
 }
@@ -230,7 +230,7 @@
   font-family: var(--accent-font), fantasy;
   font-size: var(--main-fsize);
   line-height: 150%;
-  inline-size: 257px;
+  inline-size: var(--close-btn-width);
   block-size: 38px;
   background-color: transparent;
   border: 2px solid var(--accent-color);
@@ -242,6 +242,7 @@
   position: relative;
   overflow: hidden;
   background: var(--bg-color);
+  transition: 0.3s ease;
 }
 
 .button::before {
@@ -260,7 +261,6 @@
 .button:focus-visible {
   outline: none;
   box-shadow: 2px 2px 0px var(--accent-color);
-  transition: 0.3s ease;
 }
 
 .card__icon-button:focus {
@@ -270,7 +270,6 @@
 .card__icon-button:focus-visible {
   outline: none;
   border-color: var(--accent-color);
-  transition: 0.3s ease;
 }
 
 .core {
@@ -316,5 +315,9 @@
   .floppy {
   inline-size: 21px;
   block-size: 21px;
+  }
+
+  .dialog {
+    padding: 23px 30px;
   }
 }
