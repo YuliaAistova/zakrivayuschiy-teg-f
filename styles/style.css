@@ -284,12 +284,12 @@
 
 .main-body {
   fill: transparent;
-  transition: 0.3s linear;
+  transition: 0.3s linear 0.05s;
 }
 
 .card__icon-button:hover .main-body {
   fill: var(--contour-color);
-  transition: 0.3s linear 0.05s;
+  transition: 0.3s linear;
 }
 
 
